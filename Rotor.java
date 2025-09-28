@@ -13,17 +13,28 @@ public class Rotor {
     }
     
     public boolean rotate(){
-        //TODO
-               
+
+        char last = rotorValues.charAt(rotorValues.length() - 1);
+        rotorValues = last + rotorValues.substring(0, rotorValues.length() - 1);
+        if (last == startChar) {
+            return true;
+        }
+        return false;
+
     }
     
 
     public int indexOf(char c){
-        //TODO
+        for (int i = 0; i < rotorValues.length(); i++) {
+            if (rotorValues.charAt(i) == c) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public char charAt(int idx){
-        //TODO
+        return rotorValues.charAt(idx);
     }
 }
     
