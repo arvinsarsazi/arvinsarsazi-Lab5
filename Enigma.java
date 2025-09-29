@@ -18,7 +18,7 @@ public class Enigma{
         
     }
 
-    public char Charencrypt(char c) {
+    public char charEncrypt(char c) {
 
         int inrotor_index = rotors[0].indexOf(c);
         char outrotor_char = rotors[2].charAt(inrotor_index);
@@ -35,7 +35,14 @@ public class Enigma{
 
     
     public String encrypt(String message){
-        //TODO
+
+        char[] array = new char[message.length()];
+        for (int i = 0; i < message.length(); i++) {
+            array[i] = charEncrypt(message.charAt(i));
+        }
+        message = String.valueOf(array);
+        return message;
+
     }
 
     
