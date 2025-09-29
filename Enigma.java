@@ -18,7 +18,16 @@ public class Enigma{
         
     }
 
+    public char Charencrypt(char c) {
 
+        int inrotor_index = rotors[0].indexOf(c);
+        char outrotor_char = rotors[2].charAt(inrotor_index);
+        int midrotor_index = rotors[1].indexOf(outrotor_char);
+        char result = rotors[2].charAt(midrotor_index);
+        rotate();
+        return result;
+
+    }
     public String decrypt(String message){        
         //TODO
     }
