@@ -40,8 +40,14 @@ public class Enigma{
 
     }
 
-    public String decrypt(String message){        
-        //TODO
+    public String decrypt(String message){      
+
+        char[] array = new char[message.length()];
+        for (int i = 0; i < message.length(); i++) {
+            array[i] = charDecrypt(message.charAt(i));
+        }
+        message = String.valueOf(array);
+        return message;
     }
 
 
