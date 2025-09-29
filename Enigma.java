@@ -28,6 +28,18 @@ public class Enigma{
         return result;
 
     }
+
+    public char charDecrypt(char c) {
+
+        int outrotor_index = rotors[2].indexOf(c);
+        char midrotor_char = rotors[1].charAt(outrotor_index);
+        int outrotor_index2 = rotors[2].indexOf(midrotor_char);
+        char result = rotors[0].charAt(outrotor_index2);
+        rotate();
+        return result;
+
+    }
+
     public String decrypt(String message){        
         //TODO
     }
